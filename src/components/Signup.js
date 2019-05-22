@@ -35,7 +35,7 @@ class Signup extends Component {
             type: this.state.type
         }
 
-        Axios.post('endpoint', newUser)
+        Axios.post('localhost:3000/users/', newUser)
             .then(response => {
                 console.log(response);
                 alert('Successfully registered.');
@@ -57,29 +57,76 @@ class Signup extends Component {
         const { name, email, phone, password, nic, type } = this.state;
         return (
             <div className="App">
+                <h1>Train Booking System</h1>
                 <form onSubmit={this.signup}>
-                    Name :
-                    <input type="text" placeholder="Name" value={name} onChange={this.changeHandler}></input>
-                    <br />
-                    Email :
-                    <input type="Email" placeholder="Email Address" value={email} onChange={this.changeHandler}></input>
-                    <br />
-                    Phone :
-                    <input type="text" placeholder="Phone Number" value={phone} onChange={this.changeHandler}></input>
-                    <br />
-                    Password :
-                    <input type="Password" placeholder="Password" value={password} onChange={this.changeHandler}></input>
-                    <br />
-                    NIC :
-                    <input type="text" placeholder="NIC" value={nic} onChange={this.changeHandler}></input>
-                    <br />
-                    Type :
-                    <input type="text" placeholder="User Type" value={type} onChange={this.changeHandler}></input>
-                    <br /><br />
-                    <button type="submit">Sign Up</button>
+                    <table>
+                        <tr>
+                            <td>
+                                Name :
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Name" value={name} onChange={this.changeHandler}></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Email :
+                            </td>
+                            <td>
+                                <input type="Email" placeholder="Email Address" value={email} onChange={this.changeHandler}></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Phone :
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Phone Number" value={phone} onChange={this.changeHandler}></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Password :
+                            </td>
+                            <td>
+                                <input type="Password" placeholder="Password" value={password} onChange={this.changeHandler}></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                NIC :
+                            </td>
+                            <td>
+                                <input type="text" placeholder="NIC" value={nic} onChange={this.changeHandler}></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Type :
+                            </td>
+                            <td>
+                                <input type="text" placeholder="User Type" value={type} onChange={this.changeHandler}></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <button type="submit">Sign Up</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Already have an account?
+                            </td>
+                            <td>
+                                <button type="submit" onClick={this.login}>Log in</button>
+                            </td>
+                        </tr>
+                    </table>
                 </form>
                 <br /><br />
-                Already have an account? <button type="submit" onClick={this.login}>Log in</button>
+
             </div>
         );
     }

@@ -16,7 +16,7 @@ class SampathBank extends Component {
     pay = e => {
         if (this.state.buttonClicked === 'yes') {
             e.preventDefault();
-            Axios.post('endpoint', this.state.details)
+            Axios.post('localhost:3000/card-payment/', this.state.details)
                 .then(response => {
                     console.log(response);
                     alert('Train booked. Check your email for the confirmation.');

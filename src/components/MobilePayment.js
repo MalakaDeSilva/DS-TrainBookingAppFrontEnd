@@ -66,9 +66,12 @@ class MobilePayment extends Component {
         const ticketClass = this.state;
         return (
             <div>
+                <h1 align="center">Train Booking System</h1>
                 {
+                     
                     this.state.ticketDetails.map(ticketT => (
                         <div>
+                           
                             <form onSubmit={this.submitHandler}>
                                 <table id="t01">
                                     <tr>
@@ -85,7 +88,7 @@ class MobilePayment extends Component {
                                     </tr>
                                     <tr>
                                         <td>Everything is filled?</td>
-                                        <td><button type="submit"></button></td>
+                                        <td><button type="submit">Done</button></td>
                                     </tr>
                                 </table>
                             </form>

@@ -65,6 +65,7 @@ class TrainDetails extends Component {
         const { tickets, method, route } = this.state;
         return (
             <div>
+                <h1 align="center">Train Booking System</h1>
                 {this.state.trains.map(train => (
                     <div>
                         <form onSubmit={this.bookTrain}>
